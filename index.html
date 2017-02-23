@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src = "js/main.js"></script>
+  </head>
+  <body>
+    <!--show map-->
+    <div id="map" class="mapoutline">
+        
+    </div>
+    <!--Search form-->
+    <div class="search-store">
+        <h3>STORES FINDER</h3>
+        <input type="text" id="inputsearch" placeholder="City,Postcode" value="" onkeypress="pressSearch(event)">
+        <button type="button" id="btnSearch" class="btnStore" onclick="btnSearch()">FIND STORE</button>
+        <p>OR</p>
+        <button type="button" id="btnMylocation" class="btnMylocation" onclick="btnMylocation()">USE MYLOCATION</button>
+    </div>
+    <!--Filter Store-->
+    <div class="filter-store">
+        <p>SEARCH BY STORE TYPE</p>
+        <ul id="storeType">
+            <li>
+                <input type="checkbox" name="StoreType" id="Politix-store" value="politix" onclick="SearchType(this)">
+                <label>POLITIX Store</label>
+            </li>
+            <li>
+                <input type="checkbox" name="StoreType" id="Myer" value="myer" onclick="SearchType(this)">
+                <label>Myer</label>
+            </li>
+            <li>
+                <input type="checkbox" name="StoreType" id="Factory" value="factory" onclick="SearchType(this)">
+                <label>Factory</label>
+            </li>
+            <li>
+                <input type="checkbox" name="StoreType" id="Stockist" value="stockist" onclick="SearchType(this)">
+                <label>Stockist</label>
+            </li>
+        </ul>
+    </div>
+    <!--Find near store-->
+    <div class="near-store" id="near-store">
+        <h3><span id="NumberStore"></span> STORE NEAR YOU</h3>
+        <ul class="list-near-store">
+
+        </ul>
+
+    </div>
+    <div class="find-store" id="find-store">
+        <h1>CAN'T FIND YOUR STORE?</h1>
+        <p>Visit the
+            <a href="" style="{color: #000000;}">POLITIX</a> Store Directory...
+        </p>
+        <button><a href="https://development-web-politix.demandware.net/on/demandware.store/Sites-politix_au-Site/en_AU/PolitixStores-Directory"> VIEW DIRECTORY</a></button>
+    </div>
+    <!--View Store detail-->
+    <div id="ViewStore" class="viewStore">
+      <div class="viewStore-content">
+        <span class="close">x</span>
+        <div class="storedetail">
+            <h2 id="StoreName"></h2>
+            <p id="StoreType"></p>
+            <p id="StoreCity"></p>
+            <hr>
+            <h5>OPENING HOURS</h5>
+        </div>
+        <div id="storemap">
+                
+        </div>
+        <button class="btn-direction" id="direction"><a href="" id="link-direction" target="_blank"> GET DIRECTION</a></button>
+      </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-cL_SxwzrA11R1h7GQxNH_QkTSRJ44mU&callback=initMap"></script>
+    
+  </body>
+</html>
